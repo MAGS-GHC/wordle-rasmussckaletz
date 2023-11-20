@@ -1,0 +1,13 @@
+PLAN
+
+1. Oprette grid 5x6 - HTML & CSS
+2. Læs fil og split ord efter hvert mellemrum
+3. Vælg random ord fra array
+4. Split valgte ord i enkelte bogstaver og lav array
+5. Lav nyt input (indtast ord)
+6. Tjek om ord er i listen
+7. Sammenlign bogstaverne ud fra array
+8. Angiv farver på 5 pladser afhængig af, om de er korrekte eller ej
+9. Gå til næste række
+10. Hvis sidste række er udfyldt, og ikke korrekt: - "Beklager, du er dum"
+11. Hvis gæt er korrekt: - "Tillykke, du er ikke dum"
