@@ -5,17 +5,28 @@ html {
 
 .container {
     height: 95vh;
+    margin: 0 auto;
 }
 
-.row1, .row2, .row3, .row4, .row5, .row6 {
+.row1,
+.row2,
+.row3,
+.row4,
+.row5,
+.row6 {
     display: grid;
-    grid-template-columns: 1vw 1vw 1vw 1vw 1vw;
+    grid-template-columns: 1vw 1vw 1vw 1vw 1vw 1vw;
     grid-gap: 4vw;
     margin-bottom: 0.5vw;
     justify-content: center;
 }
 
-.row1 div, .row2 div, .row3 div, .row4 div, .row5 div, .row6 div {
+.row1 div,
+.row2 div,
+.row3 div,
+.row4 div,
+.row5 div,
+.row6 div {
     height: 4vw;
     width: 4vw;
     font-size: 3vw;
@@ -26,4 +37,30 @@ html {
     background-color: rgb(50, 50, 50);
     border: 3px solid rgb(121, 121, 121);
     border-radius: 5px;
+}
+
+.input-container {
+    display: grid;
+    justify-content: center;
+}
+
+.input-field {
+    width: 20vw;
+    height: 2vw;
+    margin: 1vw;
+    text-align: center;
+    border: none;
+    background-color: white;
+}
+
+.input-field:disabled {
+    cursor: not-allowed;
+    background-color: grey;
+    opacity: 0.1;
+}
+
+.submit-button,
+.reset-button {
+    width: fit-content;
+    margin: 0 auto 0.3vw;
 }
