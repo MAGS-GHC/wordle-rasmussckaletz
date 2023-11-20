@@ -1,7 +1,14 @@
+fetch("/Assets/valid-wordle-words.txt")
+    .then((response) => response.text())
+    .then((data) => {
+        const words = data.split(" ");
+        const randomWord = Math.floor(Math.random() * words.length);
+        console.log(randomWord, words[randomWord]);
+    });
+
 const word = "about";
 
 function inputValidation() {
-
     let inputFromHTML = document.getElementById("input").value.toLowerCase();
     let validInput = /^[a-z]+$/.test(inputFromHTML);
     if (validInput && inputFromHTML.length === 5) {
@@ -12,7 +19,6 @@ function inputValidation() {
 }
 
 function uiUpdater() {
-
     let splitSecretWord = word.split("");
     let validInput = inputValidation();
     let inputSplitArray = validInput.split("");
@@ -21,15 +27,14 @@ function uiUpdater() {
 
     for (element of rowSelector.getElementsByTagName("div")) {
         element.innerHTML = inputSplitArray[count];
-        
-        if (splitSecretWord[count] ===  inputSplitArray[count]) {
-            element.style.backgroundColor = "green";
+
+        if (splitSecretWord[count] === inputSplitArray[count]) {
+        element.style.backgroundColor = "green";
         } else {
-            element.style.backgroundColor = "red";
+        element.style.backgroundColor = "red";
         }
 
         count++;
-
     }
     count = 0;
 }
