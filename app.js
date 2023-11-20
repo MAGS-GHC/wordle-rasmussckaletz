@@ -32,13 +32,13 @@ function uiUpdater() {
         element.innerHTML = currentLetterInGuessedWord
         
         if (currentLetterInSecretWord === currentLetterInGuessedWord) {
-            element.style.backgroundColor = "green";
+            element.style.backgroundColor = "rgb(0, 153, 0)";
 
         } else if (splitSecretWord.includes(currentLetterInGuessedWord)) {
-            element.style.backgroundColor = "yellow";
+            element.style.backgroundColor = "rgb(255, 215, 0)";
 
         } else {
-            element.style.backgroundColor = "red";
+            element.style.backgroundColor = "rgb(50, 50, 50)";
         }
 
         count++;
