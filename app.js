@@ -99,7 +99,7 @@ fetch("/Assets/valid-wordle-words.txt")
     .then((data) => {
         words = data.split(" ");
         const randomWord = Math.floor(Math.random() * words.length);
-        console.log(words[randomWord]);
+        //console.log(words[randomWord]);
 
         secretWord = words[randomWord];
         splitSecretWord = secretWord.split("");
