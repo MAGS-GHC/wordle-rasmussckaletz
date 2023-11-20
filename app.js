@@ -7,6 +7,7 @@ fetch("/Assets/valid-wordle-words.txt")
     });
 
 const word = "about";
+let splitSecretWord = word.split("");
 
 function inputValidation() {
     let inputFromHTML = document.getElementById("input").value.toLowerCase();
@@ -19,19 +20,25 @@ function inputValidation() {
 }
 
 function uiUpdater() {
-    let splitSecretWord = word.split("");
     let validInput = inputValidation();
     let inputSplitArray = validInput.split("");
     let rowSelector = document.getElementById("row1");
     let count = 0;
 
     for (element of rowSelector.getElementsByTagName("div")) {
-        element.innerHTML = inputSplitArray[count];
+        let currentLetterInSecretWord = splitSecretWord[count];
+        let currentLetterInGuessedWord = inputSplitArray[count];
 
-        if (splitSecretWord[count] === inputSplitArray[count]) {
-        element.style.backgroundColor = "green";
+        element.innerHTML = currentLetterInGuessedWord
+        
+        if (currentLetterInSecretWord === currentLetterInGuessedWord) {
+            element.style.backgroundColor = "green";
+
+        } else if (splitSecretWord.includes(currentLetterInGuessedWord)) {
+            element.style.backgroundColor = "yellow";
+
         } else {
-        element.style.backgroundColor = "red";
+            element.style.backgroundColor = "red";
         }
 
         count++;
